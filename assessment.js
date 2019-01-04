@@ -6,6 +6,11 @@
  */
 
 // CODE HERE
+var me = {
+  firstname: "Tyson",
+  age: 21,
+  state: "Utah"
+}
 
 /**
  * #2
@@ -13,8 +18,8 @@
  * Add a new key/value pair to the 'me' object using dot notation.
  * The new key should be 'faveColor'. Set it to your favorite color as a string.
  */
-
-// CODE HERE
+// CODE HERE 
+me.faveColor="blue"
 
 /**
  * #3
@@ -30,7 +35,7 @@ var message = {
 };
 // DON'T TOUCH THE CODE ABOVE
 // CODE HERE
-
+message['text'] = "Hello"
 /**
  * #4
  *
@@ -40,7 +45,10 @@ var message = {
  */
 
 // CODE HERE
-
+var adjustCount = {
+upVote: function(num){return num+1},
+downVote: function(num){return num-1}
+}
 /**
  * #5
  *
@@ -48,6 +56,8 @@ var message = {
  */
 
 // CODE HERE
+var myFriends = [ "Megan", "Trey", "Josh", "Angie"
+]
 
 /**
  * #6
@@ -56,6 +66,7 @@ var message = {
  */
 
 // CODE HERE
+myFriends[4]="Jacob"
 
 /**
  * #7
@@ -68,6 +79,7 @@ var message = {
 var myArray = [1, 2, 3, 4];
 // DON'T TOUCH THE CODE ABOVE
 // CODE HERE
+var myArrayCopy = myArray.slice();
 
 /**
  * #8
@@ -81,6 +93,13 @@ var myNumbers = [333, 1, 4, 5, 511, 34, 88, 77, 222];
 //DON'T TOUCH THE CODE ABOVE
 function evensOnly() {
   // CODE HERE
+  var evensOnly =[];
+  for(i=0; i<myNumbers.length; i++){
+    if ((myNumbers[i] % 2) === 0) {
+   evensOnly.push(myNumbers[i]);
+  }
+  }
+  return evensOnly;
 }
 
 /**
@@ -99,6 +118,11 @@ var peopleIknow = [
   { name: "Michelle", friend: false },
   { name: "Holly", friend: true }
 ];
+var trueFriends = peopleIknow.filter(function(val,i,arr){
+  if (val.friend === true) {
+    return val.name;
+  }
+})
 
 /**
  * #10
@@ -110,3 +134,12 @@ var peopleIknow = [
  */
 
 let randomNumbers = [1, 3453, 34, 456, 32, 3, 2, 0];
+function indexFinder(arr){
+  return arr.map(function(val, i) {
+    console.log(val);
+    console.log(i);
+    return i;
+  });
+}
+
+let indexes = indexFinder(randomNumbers);
